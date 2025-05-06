@@ -1,0 +1,140 @@
+/* CSS: */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 22px;
+    text-decoration: none;
+    list-style-type: none;
+    /* Sobreposição para todos acima dos favos: */
+    z-index: 2;
+}
+:root {
+    /* Cores Padrões: */
+    --cor-bg-primaria: #000;
+    /* --cor-bg-secundaria: #a9a7a7; */
+    --cor-bg-secundaria: #7c98a0;
+    --cor-bg-terciaria: #f1f1f1;
+    --cor-bg-quaternaria: #444;
+    --cor-bg-quintaria: #2082a0;
+
+    --cor-txt-primaria: #f1f1f1;
+    --cor-txt-secundaria: #000;
+    --cor-txt-terciaria: #a9a7a7;
+}
+html {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--cor-txt-primaria);
+    background-color: var(--cor-bg-primaria);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    /* overflow: hidden; */
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    height: 90vh;
+    margin: 10%;
+    border: 1px solid var(--cor-txt-primaria);
+    border-radius: 15px;
+    box-shadow: 0 4px 28px rgba(247, 246, 246, 0.509);
+}
+span {
+    color: var(--cor-bg-quintaria);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+.tela-principal {
+    background-color: var(--cor-bg-secundaria);
+    margin-top: 5%;
+}
+/* Título: */
+label {
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    padding: 1rem;
+}
+/* Botão Seletor de Timer: */
+select {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5);
+}
+.radio-conectar {
+    font-style: normal;
+    padding: 0.5rem;
+}
+/* Título dos Canais de Rádio: */
+.radio-conectar p {
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    padding: 1rem;
+    padding-bottom: 0.5rem;
+}
+/* Botões dos Canais de Rádio: */
+.radio-btn {
+    background-color: var(--cor-bg-quaternaria);
+    color: var(--cor-txt-primaria);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 18px rgba(128, 174, 230, 0.669);
+    margin: 0.5rem;
+}
+.radio-btn:hover {
+    background-color: var(--cor-bg-primaria);
+}
+.radio-btn.playing {
+    background-color: var(--cor-bg-quintaria);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5);
+}
+/* Botões Iniciar e Parar */
+.radio-botoes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.radio-botoes button,
+.tela-desbloqueada button {
+    padding: 0.4rem 1rem;
+    border: none;
+    background-color: var(--cor-bg-terciaria);
+    transition: .5s ease-in-out;
+    border-radius: 10px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5);
+}
+.radio-botoes button:hover,
+.tela-desbloqueada button:hover {
+    background-color: var(--cor-bg-primaria);
+    color: var(--cor-txt-primaria);
+    cursor: pointer;
+}
+.aviso {
+    padding: 1rem;
+    color: var(--cor-txt-secundaria);
+}
+
