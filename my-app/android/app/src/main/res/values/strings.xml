@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Clock Radio Android</string>
+    <string name="title_activity_main">Clock Radio Android</string>
+    <string name="package_name">io.github.marcimoreira.clockradioandroid</string>
+    <string name="custom_url_scheme">io.github.marcimoreira.clockradioandroid</string>
+</resources>

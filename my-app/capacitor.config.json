@@ -1,0 +1,10 @@
+{
+  "appId": "io.github.marcimoreira.clockradioandroid",
+  "appName": "Clock Radio Android",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchAutoHide": false
+    }
+  }
+}

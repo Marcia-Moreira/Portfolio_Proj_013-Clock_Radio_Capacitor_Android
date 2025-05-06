@@ -1,0 +1,29 @@
+{
+  "name": "capacitor-app",
+  "version": "1.0.0",
+  "description": "An Amazing Capacitor App",
+  "type": "module",
+  "keywords": [
+    "capacitor",
+    "mobile"
+  ],
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "copiar": "powershell -ExecutionPolicy Bypass -File copiar_para_www.ps1",
+    "deploy": "npm run build && npm run copiar && npx cap sync"
+  },
+  "dependencies": {
+    "@capacitor/android": "^7.2.0",
+    "@capacitor/camera": "latest",
+    "@capacitor/core": "^7.2.0",
+    "@capacitor/splash-screen": "latest"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^7.2.0",
+    "vite": "^5.4.2"
+  },
+  "author": "Marcia Moreira",
+  "license": "ISC"
+}
