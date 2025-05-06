@@ -1,4 +1,4 @@
-// Para gerar Player das Rádios
+// Para gerar Player das Rádios sem abrir a página origem e sem precisar de outro play:
 const buttons = document.querySelectorAll('.radio-btn');
 let currentPlayer = null;
 let currentButton = null;
