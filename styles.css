@@ -17,6 +17,8 @@
     --cor-bg-terciaria: #f1f1f1;
     --cor-bg-quaternaria: #444;
     --cor-bg-quintaria: #2082a0;
+    --cor-bg-sextaria: #19637a;
+    --cor-bg-septuaria: #0f4c6b;
 
     --cor-txt-primaria: #f1f1f1;
     --cor-txt-secundaria: #000;
@@ -60,12 +62,16 @@ button {
 }
 span {
     color: var(--cor-bg-quintaria);
-    font-weight: bold;
+    /* font-weight: bold; */
     text-transform: uppercase;
     font-size: 20px;
+    font-weight: 800;
 }
 span.name-programa {
-    font-size: 40px;
+    /* font-size: 40px; */
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--cor-bg-sextaria);
 }
 .tela-principal {
     background-color: var(--cor-bg-secundaria);
@@ -74,7 +80,7 @@ span.name-programa {
 }
 /* Título: */
 label {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     font-weight: 600;
     letter-spacing: 3px;
     padding: 1rem;
@@ -82,11 +88,27 @@ label {
 /* Botão Seletor de Timer: */
 select {
     font-size: 1rem;
+    font-weight: 600;
     margin-bottom: 1rem;
     padding: 15px;
     border-radius: 10px;
     border: none;
     box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5);
+}
+.cronometro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    font-weight: 600;
+    /* gap: 1rem; */
+    /* padding-bottom: 0.5rem; */
+    background-color: var(--cor-bg-quintaria);
+    padding: 0.5rem;
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
+    margin-top: 0;
 }
 .radio-conectar {
     font-style: normal;
@@ -94,7 +116,7 @@ select {
 }
 /* Título dos Canais de Rádio: */
 .radio-conectar p {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: 600;
     letter-spacing: 3px;
     padding: 1rem;
@@ -164,7 +186,7 @@ select {
         font-size: 14px;
     }
     span.name-programa {
-        font-size: 30px;
+        font-size: 1.5rem;
         padding-top: 0.3rem;
     }
     section {
@@ -177,7 +199,7 @@ select {
         letter-spacing: 2px;
     }
     label {
-        font-size: 1.4rem;
+        font-size: 1.1rem;
         padding: 0.5rem;
     }
     .radio-btn {
