@@ -12,7 +12,7 @@ buttons.forEach(button => {
     if (player === currentPlayer) {
       player.pause();
       button.classList.remove('playing');
-      button.textContent = '▶️ ' + button.textContent.replace('⏸️ Pausar ', '');
+      button.textContent = '▶️  ' + button.textContent.replace('⏸️ Pausar ', '');
       currentPlayer = null;
       currentButton = null;
     } else {
@@ -21,7 +21,7 @@ buttons.forEach(button => {
         currentPlayer.pause();
         if (currentButton) {
           currentButton.classList.remove('playing');
-          currentButton.textContent = '▶️ ' + currentButton.textContent.replace('⏸️ Pausar ', '');
+          currentButton.textContent = '▶️  ' + currentButton.textContent.replace('⏸️ Pausar ', '');
         }
       }
 

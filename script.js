@@ -86,29 +86,51 @@ document.getElementById("stop").addEventListener("click", function() {
 // FUNÇÃO SPEAK() - VERSÃO NOVA (SUBSTITUI A ORIGINAL)
 // =============================================
 async function speak(text) {
-    //! 1. Abaixa volume da música para 30% (FALHA Não está funcionando ainda)
-    if (musicGainNode) {
-        musicGainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+    // 1. Pausa a música completamente (se existir)
+    const audioPlayer = document.querySelector(".radio-btn"); // Substitua pelo seletor do seu player
+    if (audioPlayer) {
+        const wasPlaying = !audioPlayer.paused;
+        audioPlayer.pause(); // Pausa a música
+        
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.volume = 2.0; // Volume máximo
+        utterance.rate = 1.0;
+        
+        utterance.onend = () => {
+            // Restaura a música apenas se estava tocando antes
+            if (wasPlaying) {
+                audioPlayer.play().catch(e => console.log("Erro ao retomar música:", e));
+            }
+            console.log("Fala concluída.");
+        };
+        
+        speechSynthesis.cancel();
+        speechSynthesis.speak(utterance);
+    } else {
+        // Fallback se não encontrar o player (volume máximo possível)
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.volume = 1.0;
+        speechSynthesis.speak(utterance);
     }
-
-    // 2. Configura a fala
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.volume = 1.0; // Volume máximo permitido
-    utterance.rate = 1.0;
-    utterance.pitch = 1.0;
-
-    // 3. Restaura volume quando terminar
-    utterance.onend = () => {
-        if (musicGainNode) {
-            musicGainNode.gain.setValueAtTime(1.0, audioContext.currentTime);
-        }
-        console.log("Fala concluída.");
-    };
-
-    // 4. Cancela falas pendentes e inicia nova
-    speechSynthesis.cancel();
-    speechSynthesis.speak(utterance);
 }
+
+// =============================================
+// Opcional: Fade in/out suave (evita clicks)
+// =============================================
+function fadeAudio(element, targetVolume, duration = 500) {
+    const initialVolume = element.volume;
+    const delta = targetVolume - initialVolume;
+    const startTime = performance.now();
+
+    function updateVolume() {
+        const elapsed = performance.now() - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        element.volume = initialVolume + delta * progress;
+        if (progress < 1) requestAnimationFrame(updateVolume);
+    }
+    updateVolume();
+}
+// Uso: fadeAudio(audioPlayer, 0); // Abaixa volume gradualmente
 
 // =============================================
 // Service Worker (MANTIDO IGUAL)
